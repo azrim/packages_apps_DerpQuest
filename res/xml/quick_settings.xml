@@ -81,6 +81,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/qs_media">
+
+    <!-- QS media player -->
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="qs_media_player"
+        android:title="@string/qs_media_player_title"
+        android:summaryOn="@string/qs_media_player_summary_on"
+        android:summaryOff="@string/qs_media_player_summary_off"
+        android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="qs_footer_category"
         android:title="@string/qs_footer_category_title" >
         <!-- QS footer text toggle -->
