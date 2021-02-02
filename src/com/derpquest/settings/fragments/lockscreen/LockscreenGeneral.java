@@ -16,9 +16,12 @@
 
 package com.derpquest.settings.fragments.lockscreen;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.ServiceManager;
@@ -51,6 +54,8 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FOD_ANIMATIONS = "fod_animations";
+    private static final String SYNTHETIC_FILE_SELECT = "synthetic_file_select";
+    private static final int REQUEST_PICK_IMAGE = 22;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -61,6 +66,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private PreferenceCategory mFODCategory;
+    private Preference mImageSelect;
 
     Preference mAODPref;
 
@@ -92,8 +98,21 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
             prefSet.removePreference(mFODCategory);
         }
 
+        mImageSelect = findPreference(SYNTHETIC_FILE_SELECT);
+
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mImageSelect) {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -142,6 +161,17 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+        if (requestCode == REQUEST_PICK_IMAGE) {
+            if (resultCode != Activity.RESULT_OK) {
+                return;
+            }
+            final Uri imageUri = result.getData();
+            Settings.System.putString(getContentResolver(), Settings.System.SYNTHETIC_CUSTOM_IMAGE, imageUri.toString());
+        }
     }
 
     @Override

@@ -566,4 +566,11 @@
     <string name="media_category">Medienbenachrichtigungsoptionen</string>
     <string name="artwork_media_background_title">Artwork-Medienhintergrund</string>
     <string name="artwork_media_background_summary">Legen Sie die Mediengrafik als Hintergrund für Medienbenachrichtigungen fest</string>
+
+    <!-- Synthetic Clock Settings -->
+    <string name="lock_synthetic_clock_title">Synthetic Clock</string>
+    <string name="file_image_select_title">Bild auswählen</string>
+    <string name="file_image_select_summary">Wählen Sie ein benutzerdefiniertes Bild</string>
+    <string name="synthetic_clock_format_title">Synthetic Uhrformat</string>
+    <string name="synthetic_date_format_title">Synthetic Datumsformat</string>
 </resources>

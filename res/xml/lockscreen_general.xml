@@ -127,4 +127,28 @@
             android:persistent="false" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lock_synthetic_clock"
+        android:title="@string/lock_synthetic_clock_title">
+
+        <Preference
+            android:key="synthetic_file_select"
+            android:title="@string/file_image_select_title"
+            android:summary="@string/file_image_select_summary"
+            android:persistent="false" >
+        </Preference>
+
+        <!-- Synthetic clock format -->
+        <com.derp.support.preference.SystemSettingEditTextPreference
+            android:key="synthetic_clock_format"
+            android:title="@string/synthetic_clock_format_title"
+            android:defaultValue="hh | mm | ss" />
+
+        <!-- Synthetic date format -->
+        <com.derp.support.preference.SystemSettingEditTextPreference
+            android:key="synthetic_date_format"
+            android:title="@string/synthetic_date_format_title"
+            android:defaultValue="EEE" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
