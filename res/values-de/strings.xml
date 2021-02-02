@@ -71,6 +71,8 @@
     <string name="lockscreen_tuner_summary">Fügen Sie Tuner-Teile Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
     <string name="lockscreen_weather_title2">Wetteroptionen</string>
     <string name="lockscreen_weather_summary2">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
+    <string name="lockscreen_smart_media_title">Smart Media Optionen</string>
+    <string name="lockscreen_smart_media_summary">Konfigurieren Sie Smart Media für den Sperrbildschirm</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animationen</string>
@@ -585,4 +587,28 @@
 
     <!-- Lock Owner Info Position -->
     <string name="lock_owner_info_position_title">Eigentümerinfo-Position</string>
+
+    <!-- Synth Smart Media! -->
+    <string name="synth_smart_media_title">Synth Smart Media</string>
+    <string name="synth_smart_media_summary">Aktivieren Sie einen Media Player auf dem Sperrbildschirm im Stil von Samsungs One UI</string>
+
+    <!-- Smart Media Artwork -->
+    <string name="smart_media_artwork_blur_category_title">Artwork Blur</string>
+    <string name="smart_media_artwork_blur_title">Artwork Blur</string>
+    <string name="smart_media_artwork_blur_summary">Zeigen Sie Mediengrafiken mit Unschärfe an</string>
+    <string name="smart_media_artwork_blur_radius_title">Artwork Blur Radius</string>
+
+    <!-- Smart Media Font -->
+    <string name="smart_media_font_title">Smart Media Schriftarten</string>
+    <string name="smart_media_title_font_title">Titelsong-Schriftart</string>
+    <string name="smart_media_title_font_summary">Ändern Sie die Standardschriftart des Titelsongs</string>
+    <string name="smart_media_title_font_dialog_title">Wählen Sie eine Titelsong-Schriftart</string>
+    <string name="smart_media_artist_font_title">Künstlernamen-Schriftart</string>
+    <string name="smart_media_artist_font_summary">Ändern Sie die Standardschriftart des Künstlernamens</string>
+    <string name="smart_media_artist_font_dialog_title">Wählen Sie eine Schriftart für den Künstlernamen</string>
+
+    <!-- Smart Media Automatic Functions -->
+    <string name="smart_media_auto_functions_title">Automatische Funktionen</string>
+    <string name="smart_media_auto_show_title">Automatisches Anzeigen (0 zum Deaktivieren)</string>
+    <string name="smart_media_auto_hide_title">Automatisches Ausblenden (0 zum Deaktivieren)</string>
 </resources>

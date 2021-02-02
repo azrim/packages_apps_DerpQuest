@@ -49,4 +49,11 @@
         android:title="@string/lockscreen_general_title"
         android:summary="@string/lockscreen_general_summary" />
 
+    <com.android.settings.widget.CardPreference
+        android:key="lockscreen_smart_media_category"
+        android:fragment="com.derpquest.settings.fragments.lockscreen.SmartMedia"
+        android:icon="@drawable/ic_lockscreen_aosp_background"
+        android:title="@string/lockscreen_smart_media_title"
+        android:summary="@string/lockscreen_smart_media_summary" />
+
 </PreferenceScreen>
