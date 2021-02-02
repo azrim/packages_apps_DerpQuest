@@ -33,11 +33,13 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
 //    private static final String LOCKSCREEN_TUNER_CATEGORY = "lockscreen_tuner_category";
     private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
+    private static final String LOCKSCREEN_SMART_MEDIA_CATEGORY = "lockscreen_smart_media_category";
 
     private CardPreference mLockscreenAosp;
     private CardPreference mLockscreenGeneral;
 //    private CardPreference mLockscreenTuner;
     private CardPreference mLockscreenWeather;
+    private CardPreference mLockscreenSmartMedia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,13 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mLockscreenWeather);
         } else {
             mLockscreenWeather = (CardPreference) findPreference(LOCKSCREEN_WEATHER_CATEGORY);
+        }
+
+        CardPreference mLockscreenSmartMedia = findPreference("lockscreen_smart_media_category");
+        if (!getResources().getBoolean(R.bool.lockscreen_smart_media_category_isVisible)) {
+            getPreferenceScreen().removePreference(mLockscreenSmartMedia);
+        } else {
+            mLockscreenSmartMedia = (CardPreference) findPreference(LOCKSCREEN_SMART_MEDIA_CATEGORY);
         }
     }
 

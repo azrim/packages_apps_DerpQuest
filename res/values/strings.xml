@@ -69,6 +69,8 @@
     <string name="lockscreen_tuner_summary">Add or remove tuner parts of your lockscreen</string>
     <string name="lockscreen_weather_title2">Weather options</string>
     <string name="lockscreen_weather_summary2">Configure lockscreen weather</string>
+    <string name="lockscreen_smart_media_title">Smart Media options</string>
+    <string name="lockscreen_smart_media_summary">Configure lockscreen Smart Media</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animations</string>
@@ -705,5 +707,29 @@
     <string name="qs_panel_image_enabled_title">QS Background Image</string>
     <string name="qs_panel_image_enabled_summary">Show a image in QS Background</string>
     <string name="qs_background_file_select_title">Background Image</string>
+
+    <!-- Synth Smart Media! -->
+    <string name="synth_smart_media_title">Synth Smart Media</string>
+    <string name="synth_smart_media_summary">Enable a Media Player on Lockscreen like Samsung One UI</string>
+
+    <!-- Smart Media Artwork -->
+    <string name="smart_media_artwork_blur_category_title">Artwork Blur</string>
+    <string name="smart_media_artwork_blur_title">Artwork Blur</string>
+    <string name="smart_media_artwork_blur_summary">Display artwork media with blur</string>
+    <string name="smart_media_artwork_blur_radius_title">Artwork Blur Radius</string>
+
+    <!-- Smart Media Font -->
+    <string name="smart_media_font_title">Smart Media Fonts</string>
+    <string name="smart_media_title_font_title">Title song font</string>
+    <string name="smart_media_title_font_summary">Change the default font of the title song</string>
+    <string name="smart_media_title_font_dialog_title">Select a title song font</string>
+    <string name="smart_media_artist_font_title">Artist name font</string>
+    <string name="smart_media_artist_font_summary">Change the default font of the artist name</string>
+    <string name="smart_media_artist_font_dialog_title">Select a artist name font</string>
+
+    <!-- Smart Media Automatic Functions -->
+    <string name="smart_media_auto_functions_title">Automatic Functions</string>
+    <string name="smart_media_auto_show_title">Auto show (0 to disable)</string>
+    <string name="smart_media_auto_hide_title">Auto hide (0 to disable)</string>
 
 </resources>
