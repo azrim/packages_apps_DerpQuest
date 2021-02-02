@@ -54,6 +54,9 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FOD_ANIMATIONS = "fod_animations";
+    private static final String LOCK_ICON_POSITION = "lock_icon_position";
+    private static final String LOCK_CLOCK_POSITION = "lock_clock_position";
+    private static final String LOCK_OWNER_INFO_POSITION = "lock_owner_info_position";
     private static final String SYNTHETIC_FILE_SELECT = "synthetic_file_select";
     private static final int REQUEST_PICK_IMAGE = 22;
 
@@ -66,6 +69,9 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private PreferenceCategory mFODCategory;
+    private ListPreference mLockIconPosition;
+    private ListPreference mLockClockPosition;
+    private ListPreference mLockOwnerInfoPosition;
     private Preference mImageSelect;
 
     Preference mAODPref;
@@ -98,6 +104,27 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
             prefSet.removePreference(mFODCategory);
         }
 
+        // Lock Icon Position
+        mLockIconPosition = (ListPreference) findPreference(LOCK_ICON_POSITION);
+        mLockIconPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_ICON_POSITION, 1)));
+        mLockIconPosition.setSummary(mLockIconPosition.getEntry());
+        mLockIconPosition.setOnPreferenceChangeListener(this);
+
+        // Lock Clock Position
+        mLockClockPosition = (ListPreference) findPreference(LOCK_CLOCK_POSITION);
+        mLockClockPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_POSITION, 1)));
+        mLockClockPosition.setSummary(mLockClockPosition.getEntry());
+        mLockClockPosition.setOnPreferenceChangeListener(this);
+
+        // Lock Owner Info Position
+        mLockOwnerInfoPosition = (ListPreference) findPreference(LOCK_OWNER_INFO_POSITION);
+        mLockOwnerInfoPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_OWNER_INFO_POSITION, 1)));
+        mLockOwnerInfoPosition.setSummary(mLockIconPosition.getEntry());
+        mLockOwnerInfoPosition.setOnPreferenceChangeListener(this);
+        
         mImageSelect = findPreference(SYNTHETIC_FILE_SELECT);
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
@@ -158,6 +185,24 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
                     Integer.valueOf((String) newValue));
             mLockDateFonts.setValue(String.valueOf(newValue));
             mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+            return true;
+        } else if (preference == mLockIconPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_ICON_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockIconPosition.setValue(String.valueOf(newValue));
+            mLockIconPosition.setSummary(mLockIconPosition.getEntry());
+            return true;
+        } else if (preference == mLockClockPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockClockPosition.setValue(String.valueOf(newValue));
+            mLockClockPosition.setSummary(mLockClockPosition.getEntry());
+            return true;
+        } else if (preference == mLockOwnerInfoPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNER_INFO_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockOwnerInfoPosition.setValue(String.valueOf(newValue));
+            mLockOwnerInfoPosition.setSummary(mLockOwnerInfoPosition.getEntry());
             return true;
         }
         return false;

@@ -688,6 +688,18 @@
     <string name="synthetic_clock_format_title">Synthetic Clock format</string>
     <string name="synthetic_date_format_title">Synthetic Date format</string>
 
+    <!-- Lock Icon Position -->
+    <string name="lock_icon_position_title">Lock Icon Position</string>
+    <string name="lock_icon_position_left">Left</string>
+    <string name="lock_icon_position_center">Center</string>
+    <string name="lock_icon_position_right">Right</string>
+
+    <!-- Lock Clock Position -->
+    <string name="lock_clock_position_title">Lock Clock Position</string>
+
+    <!-- Lock Owner Info Position -->
+    <string name="lock_owner_info_position_title">Owner Info Position</string>
+
     <!-- Quick Settings Background Image -->
     <string name="qs_background_category_title">QS Background</string>
     <string name="qs_panel_image_enabled_title">QS Background Image</string>

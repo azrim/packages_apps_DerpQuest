@@ -579,4 +579,16 @@
     <string name="qs_panel_image_enabled_title">QS-Hintergrundbild</string>
     <string name="qs_panel_image_enabled_summary">Zeigen Sie ein Bild im QS-Hintergrund</string>
     <string name="qs_background_file_select_title">Hintergrundbild</string>
+
+    <!-- Lock Icon Position -->
+    <string name="lock_icon_position_title">Schlosssymbol-Position</string>
+    <string name="lock_icon_position_left">Links</string>
+    <string name="lock_icon_position_center">Zentriert</string>
+    <string name="lock_icon_position_right">Rechts</string>
+
+    <!-- Lock Clock Position -->
+    <string name="lock_clock_position_title">Schlosssymbol-Position</string>
+
+    <!-- Lock Owner Info Position -->
+    <string name="lock_owner_info_position_title">Eigentümerinfo-Position</string>
 </resources>
