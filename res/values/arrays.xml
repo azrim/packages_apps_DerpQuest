@@ -730,4 +730,17 @@
         <item>3</item>
     </string-array>
 
+    <!-- Lock Icon Positions -->
+    <string-array name="lock_icon_position_entries" translatable="false">
+        <item>@string/lock_icon_position_left</item>
+        <item>@string/lock_icon_position_center</item>
+        <item>@string/lock_icon_position_right</item>
+    </string-array>
+
+    <string-array name="lock_icon_position_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

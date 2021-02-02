@@ -573,4 +573,16 @@
     <string name="ambient_icons_lockscreen_summary">Ändern Sie die Darstellung der AOD-Symbole</string>
     <string name="ambient_icons_size_title">AOD-Symbol-Größe</string>
     <string name="ambient_icons_color_title">AOD-Symbol-Farbe</string>
+
+    <!-- Lock Icon Position -->
+    <string name="lock_icon_position_title">Schlosssymbol-Position</string>
+    <string name="lock_icon_position_left">Links</string>
+    <string name="lock_icon_position_center">Zentriert</string>
+    <string name="lock_icon_position_right">Rechts</string>
+
+    <!-- Lock Clock Position -->
+    <string name="lock_clock_position_title">Schlosssymbol-Position</string>
+
+    <!-- Lock Owner Info Position -->
+    <string name="lock_owner_info_position_title">Eigentümerinfo-Position</string>
 </resources>

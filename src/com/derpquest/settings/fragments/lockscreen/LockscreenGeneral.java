@@ -57,6 +57,9 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FOD_ANIMATIONS = "fod_animations";
     private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
+    private static final String LOCK_ICON_POSITION = "lock_icon_position";
+    private static final String LOCK_CLOCK_POSITION = "lock_clock_position";
+    private static final String LOCK_OWNER_INFO_POSITION = "lock_owner_info_position";
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -68,6 +71,9 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockDateFonts;
     private PreferenceCategory mFODCategory;
     private ColorPickerPreference mAmbientIconsColor;
+    private ListPreference mLockIconPosition;
+    private ListPreference mLockClockPosition;
+    private ListPreference mLockOwnerInfoPosition;
 
     Preference mAODPref;
 
@@ -107,6 +113,27 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mAmbientIconsColor.setNewPreviewColor(intColor);
         mAmbientIconsColor.setSummary(hexColor);
         mAmbientIconsColor.setOnPreferenceChangeListener(this);
+
+        // Lock Icon Position
+        mLockIconPosition = (ListPreference) findPreference(LOCK_ICON_POSITION);
+        mLockIconPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_ICON_POSITION, 1)));
+        mLockIconPosition.setSummary(mLockIconPosition.getEntry());
+        mLockIconPosition.setOnPreferenceChangeListener(this);
+
+        // Lock Clock Position
+        mLockClockPosition = (ListPreference) findPreference(LOCK_CLOCK_POSITION);
+        mLockClockPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_POSITION, 1)));
+        mLockClockPosition.setSummary(mLockClockPosition.getEntry());
+        mLockClockPosition.setOnPreferenceChangeListener(this);
+
+        // Lock Owner Info Position
+        mLockOwnerInfoPosition = (ListPreference) findPreference(LOCK_OWNER_INFO_POSITION);
+        mLockOwnerInfoPosition.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_OWNER_INFO_POSITION, 1)));
+        mLockOwnerInfoPosition.setSummary(mLockIconPosition.getEntry());
+        mLockOwnerInfoPosition.setOnPreferenceChangeListener(this);
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
@@ -163,6 +190,23 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                     Settings.System.AMBIENT_ICONS_COLOR, intHex);
+        } else if (preference == mLockIconPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_ICON_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockIconPosition.setValue(String.valueOf(newValue));
+            mLockIconPosition.setSummary(mLockIconPosition.getEntry());
+            return true;
+        } else if (preference == mLockClockPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockClockPosition.setValue(String.valueOf(newValue));
+            mLockClockPosition.setSummary(mLockClockPosition.getEntry());
+            return true;
+        } else if (preference == mLockOwnerInfoPosition) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNER_INFO_POSITION,
+                    Integer.valueOf((String) newValue));
+            mLockOwnerInfoPosition.setValue(String.valueOf(newValue));
+            mLockOwnerInfoPosition.setSummary(mLockOwnerInfoPosition.getEntry());
             return true;
         }
         return false;
