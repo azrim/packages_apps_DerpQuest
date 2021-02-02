@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -41,6 +42,9 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.derp.support.preference.CustomSeekBarPreference;
+import com.derp.support.colorpicker.ColorPickerPreference;
+
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.ArrayList;
@@ -57,6 +61,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_ICON_POSITION = "lock_icon_position";
     private static final String LOCK_CLOCK_POSITION = "lock_clock_position";
     private static final String LOCK_OWNER_INFO_POSITION = "lock_owner_info_position";
+    private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
     private static final String SYNTHETIC_FILE_SELECT = "synthetic_file_select";
     private static final int REQUEST_PICK_IMAGE = 22;
 
@@ -72,6 +77,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockIconPosition;
     private ListPreference mLockClockPosition;
     private ListPreference mLockOwnerInfoPosition;
+    private ColorPickerPreference mAmbientIconsColor;
     private Preference mImageSelect;
 
     Preference mAODPref;
@@ -125,6 +131,15 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mLockOwnerInfoPosition.setSummary(mLockIconPosition.getEntry());
         mLockOwnerInfoPosition.setOnPreferenceChangeListener(this);
         
+        // Ambient Icons Color
+        mAmbientIconsColor = (ColorPickerPreference) findPreference(AMBIENT_ICONS_COLOR);
+        int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.AMBIENT_ICONS_COLOR, Color.WHITE);
+        String hexColor = String.format("#%08x", (0xffffff & intColor));
+        mAmbientIconsColor.setNewPreviewColor(intColor);
+        mAmbientIconsColor.setSummary(hexColor);
+        mAmbientIconsColor.setOnPreferenceChangeListener(this);
+
         mImageSelect = findPreference(SYNTHETIC_FILE_SELECT);
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
@@ -203,6 +218,14 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
                     Integer.valueOf((String) newValue));
             mLockOwnerInfoPosition.setValue(String.valueOf(newValue));
             mLockOwnerInfoPosition.setSummary(mLockOwnerInfoPosition.getEntry());
+            return true;
+        } else if (preference == mAmbientIconsColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                .parseInt(String.valueOf(newValue)));
+            mAmbientIconsColor.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.AMBIENT_ICONS_COLOR, intHex);
             return true;
         }
         return false;

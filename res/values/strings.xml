@@ -732,4 +732,11 @@
     <string name="smart_media_auto_show_title">Auto show (0 to disable)</string>
     <string name="smart_media_auto_hide_title">Auto hide (0 to disable)</string>
 
+    <!-- AOD Icons in Lockscreen! -->
+    <string name="lock_aod_icons_title">AOD Icons</string>
+    <string name="ambient_icons_lockscreen_title">AOD Icons on Lockscreen</string>
+    <string name="ambient_icons_lockscreen_summary">Replace Notifications for AOD Icons</string>
+    <string name="ambient_icons_size_title">AOD Icons Size</string>
+    <string name="ambient_icons_color_title">AOD Icons Color</string>
+
 </resources>

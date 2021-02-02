@@ -617,4 +617,11 @@
     <string name="smart_media_auto_functions_title">Automatische Funktionen</string>
     <string name="smart_media_auto_show_title">Automatisches Anzeigen (0 zum Deaktivieren)</string>
     <string name="smart_media_auto_hide_title">Automatisches Ausblenden (0 zum Deaktivieren)</string>
+
+    <!-- AOD Icons in Lockscreen! -->
+    <string name="lock_aod_icons_title">AOD-Symbole</string>
+    <string name="ambient_icons_lockscreen_title">AOD-Symbole auf dem Sperrbildschirm</string>
+    <string name="ambient_icons_lockscreen_summary">Ändern Sie die Darstellung der AOD-Symbole</string>
+    <string name="ambient_icons_size_title">AOD-Symbol-Größe</string>
+    <string name="ambient_icons_color_title">AOD-Symbol-Farbe</string>
 </resources>
