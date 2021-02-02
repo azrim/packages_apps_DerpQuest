@@ -60,6 +60,12 @@
             android:summary="@string/qs_panel_gradient_summary"
             android:defaultValue="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qs_background_category"
+        android:title="@string/qs_background_category_title" >
+
         <!-- QS panel opacity -->
         <com.derp.support.preference.CustomSystemSeekBarPreference
             android:key="qs_panel_bg_alpha"
@@ -69,6 +75,19 @@
             android:min="0"
             settings:units="" />
 
+        <com.derp.support.preference.SystemSettingSwitchPreference
+            android:key="qs_panel_image_enabled"
+            android:title="@string/qs_panel_image_enabled_title"
+            android:summary="@string/qs_panel_image_enabled_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="qs_background_file_select"
+            android:title="@string/qs_background_file_select_title"
+            android:summary="@string/file_image_select_summary"
+            android:dependency="qs_panel_image_enabled"
+            android:persistent="false" >
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>

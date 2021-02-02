@@ -688,4 +688,10 @@
     <string name="synthetic_clock_format_title">Synthetic Clock format</string>
     <string name="synthetic_date_format_title">Synthetic Date format</string>
 
+    <!-- Quick Settings Background Image -->
+    <string name="qs_background_category_title">QS Background</string>
+    <string name="qs_panel_image_enabled_title">QS Background Image</string>
+    <string name="qs_panel_image_enabled_summary">Show a image in QS Background</string>
+    <string name="qs_background_file_select_title">Background Image</string>
+
 </resources>

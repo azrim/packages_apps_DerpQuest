@@ -573,4 +573,10 @@
     <string name="file_image_select_summary">Wählen Sie ein benutzerdefiniertes Bild</string>
     <string name="synthetic_clock_format_title">Synthetic Uhrformat</string>
     <string name="synthetic_date_format_title">Synthetic Datumsformat</string>
+
+    <!-- Quick Settings Background Image -->
+    <string name="qs_background_category_title">QS-Hintergrund</string>
+    <string name="qs_panel_image_enabled_title">QS-Hintergrundbild</string>
+    <string name="qs_panel_image_enabled_summary">Zeigen Sie ein Bild im QS-Hintergrund</string>
+    <string name="qs_background_file_select_title">Hintergrundbild</string>
 </resources>
